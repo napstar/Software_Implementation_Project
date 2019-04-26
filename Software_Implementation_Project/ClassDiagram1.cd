@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="Software_Implementation_Project.Factory.Boat" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAmAAAAIABAAAAAEBAAkAAAIAAAAAEAAAAAAAQBAA=</HashCode>
+      <FileName>Factory\Boat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.Factory.BoatFactory" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Factory\BoatFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.Factory.BoatHelperClass" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Factory\BoatHelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.Factory.MotorBoat" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAmAABAAAAAQAAAQAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory\MotorBoat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.Factory.NarrowBoat" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAmAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAAQAAAAE=</HashCode>
+      <FileName>Factory\NarrowBoat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.Factory.SailingBoat" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAmAAAAAIAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory\SailingBoat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.BoatNode">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAgAAIAgAAQAAIQAAA=</HashCode>
+      <FileName>BoatNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.DisplayManager">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAhABAAAAAAAAAAAAAAACAAAAAACAAAArEAABA=</HashCode>
+      <FileName>DisplayManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.FileOperations">
+    <Position X="1.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAACAAAAAAAAAAQAEAAABAAAAAA=</HashCode>
+      <FileName>FileOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.Marina">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAADIIAAgAAAAIAAAgCCAAAAoAEAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Marina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Implementation_Project.MarinaMaintenanceObj">
+    <Position X="1.5" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMAAAAAAIAAAAAACAAAAAAACAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>MarinaMaintenanceObj.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
