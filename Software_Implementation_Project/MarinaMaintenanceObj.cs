@@ -6,16 +6,16 @@ namespace Software_Implementation_Project
 {
     public   class MarinaMaintenanceObj
     {
-        private int marinaLength = 150;
+        public readonly int marinaLength = 150;
         private decimal rate = 10;
-        public   Marina Marina = null;
+        //public   Marina Marina = null;
         private BoatFactory BoatFactory = null;
         public MarinaMaintenanceObj()
         {
-            this.Marina = new Marina();
+          // this.Marina = new Marina();
             this.BoatFactory = new Factory.BoatFactory();
         }
-        public  Boat createBoat()
+        public  Boat createBoat(Marina Marina)
         {
             int boatLen = 0;
             int boatType =0;
@@ -45,9 +45,9 @@ namespace Software_Implementation_Project
                     Console.WriteLine("Boat Length Cannot be Greater than Marina Length or less than 1 meter");
                 }
                 //else if(boatLen>(Marina.getCurrentCapacityMarinaLength()-Marina.MarinaLength))
-                else if (boatLen > ( Marina.MarinaLength -Marina.getCurrentCapacityMarinaLength()))
+                else if (boatLen > ( marinaLength -Marina.getCurrentCapacityMarinaLength()))
                 {
-                    throw new ArgumentException("There isn't enough capacity to store this boat");
+                    throw new ArgumentException("The current marina capacity of "+Marina.getCurrentCapacityMarinaLength().ToString()+" will not be enough to accomodate this boat");
                 }
                 else
                 {

@@ -56,7 +56,7 @@ namespace Software_Implementation_Project.Factory
 
             }
         }
-        public Boat BuildBoat(string  strBoatype)
+        public static Boat BuildBoat(string  strBoatype)
         {
           
             try

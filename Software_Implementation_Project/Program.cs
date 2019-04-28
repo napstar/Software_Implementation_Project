@@ -14,24 +14,26 @@ namespace Software_Implementation_Project
             //diplays main menu and
             int user_Input = 0;
             MarinaMaintenanceObj MarinaMaintenanceObject = new Software_Implementation_Project.MarinaMaintenanceObj();
-            Marina Marina = new Software_Implementation_Project.Marina();
+           Marina Marina = new Software_Implementation_Project.Marina();
+            
             do
             {
                 try
                 {
                     user_Input = DisplayManager.displayHeaderMenu();
+                    FileOperations FP = new Software_Implementation_Project.FileOperations();
                     switch (user_Input)
                     {
                         case 1:
                             Console.WriteLine("Add new boat");
-                            Boat _boat = MarinaMaintenanceObject.createBoat();
+                            Boat _boat = MarinaMaintenanceObject.createBoat(Marina);
                             if (_boat != null)
                             {
                                 try
                                 {
                                     int currentMarinaCapacity = 0;
                                     currentMarinaCapacity = Marina.getCurrentCapacityMarinaLength();
-                                    int availableCapacity = Marina.MarinaLength - currentMarinaCapacity;
+                                    int availableCapacity = MarinaMaintenanceObject.marinaLength - currentMarinaCapacity;
                                     if (_boat.BoatLength > availableCapacity)
                                     {
                                         throw new Exception("The boat, " + _boat.NameOfBoat.ToUpper() + " has a length of " + _boat.BoatLength.ToString() + ".\nThis exceeds the marina capacity and cannot fit into fit into the marina");
@@ -42,11 +44,11 @@ namespace Software_Implementation_Project
                                         Marina.ClearAllMarinaItems();
                                     //add new boat to marina
                                         Marina.addBoatToMarina(_boat);
-                                        List<string> data = new List<string>();
-                                        data = Marina.convertMarinaToList();
+                                        List<string> listData = new List<string>();
+                                    listData = Marina.convertMarinaToList();
                                         //write to  file
-                                        FileOperations FP = new Software_Implementation_Project.FileOperations();
-                                        FP.writeToFile(true, data);
+                                     
+                                        FP.writeToFile(true, listData);
 
                                     //}
 
@@ -85,10 +87,28 @@ namespace Software_Implementation_Project
                             }
                             break;
                         case 2:
+                            string strNameOfBoatToDelete = string.Empty;
+                            while (true)
+                            {
+                                DisplayManager.displayMessage("Enter the name of the boat you to delete");
+                                strNameOfBoatToDelete = DisplayManager.getUserInputStr();
+                                if (!string.IsNullOrEmpty(strNameOfBoatToDelete))
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    DisplayManager.displayMessage("Please Enter the name of the boat you to delete");
+                                }
+                            }
+                            int index=Marina.FindItemByName(strNameOfBoatToDelete);
+                            Marina.DeleteBoat(index);
+                            List<string> data = new List<string>();
+                            data = Marina.convertMarinaToList();
+                            //write to  file
                             
-                            
-                            Marina.DeleteBoat();
-                            DisplayManager.displayInvalidInputMessage("Press Enter to go back to main menu");
+                            FP.writeToFile(true, data);
+                            DisplayManager.displayInvalidInputMessage("Press Any key to go back to main menu");
                             Console.ReadLine();
                             DisplayManager.clearScreen();
                             break;

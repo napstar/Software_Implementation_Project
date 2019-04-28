@@ -13,11 +13,20 @@ namespace Software_Implementation_Project
          */
         private Factory.Boat data;
         private BoatNode next;
-        private BoatNode head;
+         
         public BoatNode(Factory.Boat d)
         {
             data = d;
             next = null;
+        }
+        public BoatNode(Factory.Boat d,BoatNode nextBoat)
+        {
+            data = d;
+            next = nextBoat;
+        }
+        
+        public BoatNode()
+        {
         }
 
         public Factory.Boat GetItemData()
@@ -32,12 +41,14 @@ namespace Software_Implementation_Project
 
         public void SetNext(BoatNode toAppend)
         {
-            next = toAppend;
+            this.next = toAppend;
         }
-        public void SetFirst(BoatNode toAppend)
+        
+        public void ClearData(BoatNode toAppend)
         {
-            head = toAppend;
-            next = null;
+           
+            toAppend.data = null;
+           // toAppend.next = null;
         }
     }
 }
