@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Implementation_Project
 {
-     public   class Marina
+     public  class Marina
     {
         /*
          * https://stackoverflow.com/questions/5236486/adding-items-to-end-of-linked-list
@@ -15,19 +15,19 @@ namespace Software_Implementation_Project
         /*
         * this class functions as the Linked List object for storing boats 
         */
-        private   int marinaLength = 150;
-        private BoatNode head ;
-        //private BoatNode next;
-        private int count ;
-        private   Factory.BoatFactory BoatFactory;
+        private  int marinaLength = 150;
 
-        public Marina()
+        private   BoatNode head ;         
+        private   int count =0;
+     private   Factory.BoatFactory BoatFactory;
+
+        public    Marina()
         {
             head = null;
             BoatFactory = new Factory.BoatFactory();
             count = 0;
         }
-        public int MarinaLength
+        public   int MarinaLength
         {
             get
             {
@@ -37,7 +37,7 @@ namespace Software_Implementation_Project
 
         }
 
-        public BoatNode Head
+        public   BoatNode Head
         {
             get
             {
@@ -50,7 +50,7 @@ namespace Software_Implementation_Project
             }
         }
 
-        public int Count
+        public   int Count
         {
             get
             {
@@ -64,7 +64,7 @@ namespace Software_Implementation_Project
         }
 
 
-        public void Add(int index,BoatNode b)
+        public   void Add(int index,BoatNode b)
         {
             if (index<0)
             {
@@ -75,10 +75,10 @@ namespace Software_Implementation_Project
                 index = count;
             }
             //get head
-            BoatNode current = this.Head;
+            BoatNode current = Head;
             if (Count==0 || index==0)
             {
-                this.Head = b;
+                Head = b;
             }
             else
             {
@@ -89,28 +89,28 @@ namespace Software_Implementation_Project
                // BoatNode nextBoat = new Software_Implementation_Project.BoatNode(b, current.GetNext());
                 current.SetNext(b);
             }
-            this.Count++;
+            Count = Count + 1; ;
         }
-        public void AddToEnd(Factory.Boat boat)
+        public   void AddToEnd(Factory.Boat boat)
         {
             BoatNode node = new Software_Implementation_Project.BoatNode(boat);
-            Add(this.Count, node);
+            Add(Count, node);
         }
-        public void DeleteBoat(int index)
+        public   void DeleteBoat(int index)
         {
             if (index<0)
             {
                 throw new IndexOutOfRangeException("Index for delete boat is out of range");
             }
             
-            BoatNode currentBoat = this.head;
+            BoatNode currentBoat = head;
             if (index>Count)
             {
                 index = Count - 1;
             }
             if (index==0)
             {
-                this.Head = currentBoat.GetNext();
+                head = currentBoat.GetNext();
                 
             }
             else
@@ -124,19 +124,20 @@ namespace Software_Implementation_Project
             }
             count--;
         }
-        public void ClearAllMarinaItems()
+        public   void ClearAllMarinaItems()
         {
-            this.Head = new BoatNode();
-            // this.Head.SetNext(null);
-            this.count = 0;
+             Head = new BoatNode();
+             Head.SetNext(null);
+            count = 0;
         }
-        public int FindItemByName(string boatName)
+        public   int GetIndexOfBoatNodeByName(string boatName)
         {
             int result = 0;
-            BoatNode currentBoat = this.head;
+            BoatNode currentBoat = head;
             if (Count<1)
             {
                 LoadDataFromFile();
+                  currentBoat = head;
             }
             if (currentBoat.GetItemData().NameOfBoat.ToUpper()==boatName.ToUpper())
             {
@@ -149,11 +150,12 @@ namespace Software_Implementation_Project
                 if (currentBoat.GetItemData().NameOfBoat.ToUpper() == boatName.ToUpper())
                 {
                     result= i;
+                    break;
                 }
             }
             return result;
         }
-        //public   void ClearAllMarinaItems()
+        //public void ClearAllMarinaItems()
         //{
         //    //empties the marina
         //    BoatNode tempNode = head;
@@ -261,12 +263,12 @@ namespace Software_Implementation_Project
         //    }
 
         //}
-        public  void listAllBoats()
+        public   void listAllBoats()
         {
             //clear marina
             ClearAllMarinaItems();
             //load from file 
-            if (this.Count<1)
+            if (Count<1)
             {
                 LoadDataFromFile();
             }
@@ -275,11 +277,11 @@ namespace Software_Implementation_Project
             string sb = string.Empty;
            sb= PrintElements();
             //get current marina length
-            sb += "\n\n Current marina capacity :"+getCurrentCapacityMarinaLength().ToString();
+            sb += "\n\n Current marina capacity :"+getCurrentCapacityMarinaLength().ToString()+" meters";
             DisplayManager.displayMessage(sb);
         }
      
-        public  int getCurrentCapacityMarinaLength()
+        public   int getCurrentCapacityMarinaLength()
         {
 
             int total = 0;
@@ -317,7 +319,7 @@ namespace Software_Implementation_Project
 
             return total;
         }
-        public  List<string> convertMarinaToList()
+        public   List<string> convertMarinaToList()
         {
             List<string> list = new List<string>();
            
@@ -372,7 +374,7 @@ namespace Software_Implementation_Project
             }
             return list;
         }
-        public  void addBoatToMarina(Factory.Boat _boat)
+        public   void addBoatToMarina(Factory.Boat _boat)
         {
             try
             {
@@ -408,10 +410,10 @@ namespace Software_Implementation_Project
 
         }
 
-        private string PrintElements()
+        private   string PrintElements()
         {
             int result = 0;
-            BoatNode currentBoat = this.head;
+            BoatNode currentBoat = head;
             StringBuilder sb = new StringBuilder();
             if (currentBoat!=null)
             {
@@ -627,7 +629,11 @@ namespace Software_Implementation_Project
 
 
         //}
-        public   void LoadDataFromFile()
+        public void _LoadDataFromFile()
+        {
+            LoadDataFromFile();
+        }
+        private    void LoadDataFromFile()
         {
           // Marina marina = new Software_Implementation_Project.Marina();
            
@@ -635,10 +641,11 @@ namespace Software_Implementation_Project
             {
 
                 FileOperations fileOps = new Software_Implementation_Project.FileOperations();
-                BoatFactory = new Factory.BoatFactory();
+                Factory.BoatFactory BoatFactory = new Factory.BoatFactory();
                 List<string> fileList = new List<string>();
                 Factory.Boat boat = null;
                 fileList = fileOps.readDataFromFile();
+                 
                 if (fileList.Count < 1)
                 {
                     // throw new Exception("No data was returned from file");
@@ -763,7 +770,18 @@ namespace Software_Implementation_Project
                         // marina.addBoatToMarina(boat);
                         if (boat!=null)
                         {
-                            AddToEnd(boat);
+                            if (count==0)
+                            {
+                                BoatNode boatNode = new Software_Implementation_Project.BoatNode(boat);
+
+                                Add(0, boatNode);
+                            }
+                            else
+                            {
+                                AddToEnd(boat);
+                            }
+                           // count++;
+                           
                         }
                         
                     }
@@ -780,5 +798,6 @@ namespace Software_Implementation_Project
             //return Marina;
 
         }
+
     }
 }

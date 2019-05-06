@@ -8,13 +8,13 @@ namespace Software_Implementation_Project.Factory
 {
     public class BoatFactory
     {
-        public int BuildBoatSubTypes(int boatType)
+         public int BuildBoatSubTypes(int boatType)
         {
             int subType = 0;
             subType = DisplayManager.getBoatSubTypes(boatType);
             return subType;
         }
-        public int BuildBoatSubTypes(string strBoatType)
+        internal int BuildBoatSubTypes(string strBoatType)
         {
             int subType = 0;
             try
@@ -31,7 +31,7 @@ namespace Software_Implementation_Project.Factory
             
             return subType;
         }
-        public  Boat BuildBoat(int type)
+        public static Boat BuildBoat(int type)
         {
             int subType = 0;
             switch (type)

@@ -8,14 +8,14 @@ namespace Software_Implementation_Project
     {
         public readonly int marinaLength = 150;
         private decimal rate = 10;
-        //public   Marina Marina = null;
+        public   Marina Marina = null;
         private BoatFactory BoatFactory = null;
         public MarinaMaintenanceObj()
         {
-          // this.Marina = new Marina();
+           this.Marina = new Marina();
             this.BoatFactory = new Factory.BoatFactory();
         }
-        public  Boat createBoat(Marina Marina)
+        public  Boat createBoat()
         {
             int boatLen = 0;
             int boatType =0;
@@ -179,7 +179,7 @@ namespace Software_Implementation_Project
 
             return Boat;
         }
-
+        
         public bool calculateBoatResrvation()
         {
             bool proceed= false;
@@ -304,6 +304,6 @@ namespace Software_Implementation_Project
             return proceed;
         }
         
-
+       
     }
 }

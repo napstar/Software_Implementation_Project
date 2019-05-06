@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Software_Implementation_Project
 {
-    class FileOperations
+   public class FileOperations
     {
         string path = @"C:\Users\Napstar\Documents\Visual Studio 2015\Projects\testmenu\testmenu\data.csv";
-        public void writeToFile(bool update, List<string> data)
+        public void writeToFile( List<string> data)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace Software_Implementation_Project
                     r.Add(result);
                 }
 
-                writeToFile(false, r);
+                writeToFile( r);
             }
             catch (Exception ex)
             {
@@ -144,55 +144,55 @@ namespace Software_Implementation_Project
             return strDataReturned;
         }
 
-        public void displayAllRecords()
-        {
-            int spaceInUse = 0;
+        //public void displayAllRecords()
+        //{
+        //    int spaceInUse = 0;
 
-            try
-            {
-                //read data from file
-                List<string> fileData = new List<string>();
-                fileData = this.readDataFromFile();
-                if (fileData.Count >= 1)
-                {
-                    for (int i = 0; i < fileData.Count; i++)
-                    {
-                        string currentRow = fileData[i];
+        //    try
+        //    {
+        //        //read data from file
+        //        List<string> fileData = new List<string>();
+        //        fileData = this.readDataFromFile();
+        //        if (fileData.Count >= 1)
+        //        {
+        //            for (int i = 0; i < fileData.Count; i++)
+        //            {
+        //                string currentRow = fileData[i];
 
-                        Console.WriteLine(currentRow);
-                        //length is the last item in string
-                        //find the last occurance of " " in string
-                        int index = currentRow.LastIndexOf(" ");
-                        string strBoatLen = currentRow.Substring(index, currentRow.Length - index).Trim();
-                        if (strBoatLen.Length>0)
-                        {
-                            int currentBoatLen = 0;
-                            try
-                            {
-                                int.TryParse(strBoatLen, out currentBoatLen);
-                                spaceInUse += currentBoatLen;
-                            }
-                            catch (Exception ex)
-                            {
+        //                Console.WriteLine(currentRow);
+        //                //length is the last item in string
+        //                //find the last occurance of " " in string
+        //                int index = currentRow.LastIndexOf(" ");
+        //                string strBoatLen = currentRow.Substring(index, currentRow.Length - index).Trim();
+        //                if (strBoatLen.Length>0)
+        //                {
+        //                    int currentBoatLen = 0;
+        //                    try
+        //                    {
+        //                        int.TryParse(strBoatLen, out currentBoatLen);
+        //                        spaceInUse += currentBoatLen;
+        //                    }
+        //                    catch (Exception ex)
+        //                    {
 
-                                throw ex;
-                            }
-                        }
-                    }
+        //                        throw ex;
+        //                    }
+        //                }
+        //            }
 
-                    //print available space
-                    Console.WriteLine("\nCurrent Available Space:   {0}",spaceInUse.ToString());
-                }
-            }
-            catch (Exception ex )
-            {
+        //            //print available space
+        //            Console.WriteLine("\nCurrent Available Space:   {0}",spaceInUse.ToString());
+        //        }
+        //    }
+        //    catch (Exception ex )
+        //    {
 
-                throw ex;
-            }
+        //        throw ex;
+        //    }
             
 
           
-        }
+        //}
 
 
     }

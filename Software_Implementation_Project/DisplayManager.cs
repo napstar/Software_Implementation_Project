@@ -167,11 +167,7 @@ namespace Software_Implementation_Project
             }
             return userInput;
         }
-        public static void ShowBoatCaptureMessage()
-        {
-            string message = "\nYou are about to create a record for a Boat.\n press Y to continue or N or return to main menu";
-            displayImportantMessage(message);
-        }
+        
 
         private static void displayImportantMessage(string message)
         {
@@ -221,6 +217,7 @@ namespace Software_Implementation_Project
         }
         public static void exitApplication()
         {
+            GC.Collect();
             Environment.Exit(0);
         }
         public static void displayInvalidInputMessage(string message)
@@ -231,30 +228,9 @@ namespace Software_Implementation_Project
             Console.ResetColor();
         }
 
-        public static void displayMainMenu()
-        {
-            bool repeat = false;
-            displayHeaderMenu();
+        
 
-
-
-        }
-
-        public static void displayInvalidMainMenuAndReturnToMainMenu(string text, int milliseconds)
-        {
-            bool visible = true;
-            string alert = visible ? "Warning!!!" : "";
-            visible = !visible;
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.White;
-
-
-            string details = text;
-            Console.Write("{0}\n{1}", alert, details);
-            System.Threading.Thread.Sleep(milliseconds);
-            Console.ResetColor();
-        }
+     
         public static void drawRectangle(string message, ConsoleColor foreGndColor, ConsoleColor backGndColor)
         {
             Console.BackgroundColor = backGndColor;
@@ -279,34 +255,7 @@ namespace Software_Implementation_Project
             Console.ResetColor();
             Console.WriteLine("Type in an option");
         }
-        public static void drawRectangle(string message)
-        {
-            int txtWidth = message.Length + 2, height = 3;
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.ForegroundColor = ConsoleColor.White;
-            for (int i = 1; i <= height; i++)
-            {
-                for (int j = 1; j <= txtWidth; j++)
-                {
-                    if ((i == 1 || i == height) || (j == 1 || j == txtWidth))
-                        Console.Write("*"); //prints at border place
-                    else
-                        Console.Write(message[j - 2]); //prints inside other than border
-                }
-                Console.WriteLine();
-            }
-            Console.ResetColor();
-        }
-        //private enum MainMenuAction : int
-        //{
-        //    invalid = 0,
-        //    repeat = 1,
-
-        //    newBooking = 1,
-        //    deleteBooking = 2,
-        //    displayAll = 3,
-        //    exit = 4,
-        //}
+      
     }
 
 }

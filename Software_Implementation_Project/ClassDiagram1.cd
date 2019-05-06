@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
-  <Class Name="Software_Implementation_Project.Factory.Boat" Collapsed="true">
-    <Position X="7.25" Y="1.5" Width="1.5" />
+  <Class Name="Software_Implementation_Project.Factory.Boat">
+    <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAmAAAAIABAAAAAEBAAkAAAIAAAAAEAAAAAAAQBAA=</HashCode>
       <FileName>Factory\Boat.cs</FileName>
@@ -21,52 +21,59 @@
       <FileName>Factory\BoatHelperClass.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Software_Implementation_Project.Factory.MotorBoat" Collapsed="true">
-    <Position X="9.5" Y="2.75" Width="1.5" />
+  <Class Name="Software_Implementation_Project.Factory.MotorBoat">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Software_Implementation_Project.Factory.MotorBoat.driveTypeEnum" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Factory\MotorBoat.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAmAABAAAAAQAAAQAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Factory\MotorBoat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Implementation_Project.Factory.NarrowBoat" Collapsed="true">
-    <Position X="5" Y="2.75" Width="1.5" />
+    <Position X="4.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAmAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAAQAAAAE=</HashCode>
       <FileName>Factory\NarrowBoat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Implementation_Project.Factory.SailingBoat" Collapsed="true">
-    <Position X="7.25" Y="2.75" Width="1.5" />
+    <Position X="7.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAmAAAAAIAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Factory\SailingBoat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Implementation_Project.BoatNode">
-    <Position X="5.25" Y="4.5" Width="1.5" />
+    <Position X="1.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAgAAIAgAAQAAIQAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAgIAQAAIAAAA=</HashCode>
       <FileName>BoatNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Implementation_Project.DisplayManager">
     <Position X="12" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ARAAAAAhABAAAAAAAAAAAAAAACAAAAAACAAAArEAABA=</HashCode>
+      <HashCode>ABAAAAAhABAAAAAAAAAAAAAAACAAAAAACAAAApEAABA=</HashCode>
       <FileName>DisplayManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Implementation_Project.FileOperations">
     <Position X="1.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAIAACAAAAAAAAAAQAEAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAIAACAAAAAAAAAAAAEAAABAAAAAA=</HashCode>
       <FileName>FileOperations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Implementation_Project.Marina">
-    <Position X="7.5" Y="4.5" Width="1.5" />
+    <Position X="14" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAADIIAAgAAAAIAAAgCCAAAAoAEAAAAAAACAAAAAAAA=</HashCode>
+      <HashCode>gAIDIIAAgAAACIAABgACAAQAIAEAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Marina.cs</FileName>
     </TypeIdentifier>
   </Class>

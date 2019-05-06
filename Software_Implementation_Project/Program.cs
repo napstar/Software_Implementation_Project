@@ -25,8 +25,8 @@ namespace Software_Implementation_Project
                     switch (user_Input)
                     {
                         case 1:
-                            Console.WriteLine("Add new boat");
-                            Boat _boat = MarinaMaintenanceObject.createBoat(Marina);
+                            //Console.WriteLine("Add new boat");
+                            Boat _boat = MarinaMaintenanceObject.createBoat();
                             if (_boat != null)
                             {
                                 try
@@ -48,7 +48,7 @@ namespace Software_Implementation_Project
                                     listData = Marina.convertMarinaToList();
                                         //write to  file
                                      
-                                        FP.writeToFile(true, listData);
+                                        FP.writeToFile( listData);
 
                                     //}
 
@@ -87,33 +87,46 @@ namespace Software_Implementation_Project
                             }
                             break;
                         case 2:
+                            Marina.listAllBoats();
+                            bool exit = false;
+                            DisplayManager.displayMessage("\n\n");
                             string strNameOfBoatToDelete = string.Empty;
                             while (true)
                             {
-                                DisplayManager.displayMessage("Enter the name of the boat you to delete");
+                                DisplayManager.displayMessage("Enter the name of the boat you to delete"+" or press x to go back to main menu");
                                 strNameOfBoatToDelete = DisplayManager.getUserInputStr();
-                                if (!string.IsNullOrEmpty(strNameOfBoatToDelete))
+                                if (string.IsNullOrEmpty(strNameOfBoatToDelete))
                                 {
                                     break;
                                 }
                                 else
                                 {
+                                    if (strNameOfBoatToDelete.ToUpper().Equals("x".ToUpper()))
+                                    {
+                                        throw new Exception("User Cancncelled the operation");
+                                    }
                                     DisplayManager.displayMessage("Please Enter the name of the boat you to delete");
                                 }
                             }
-                            int index=Marina.FindItemByName(strNameOfBoatToDelete);
+                            
+                            int index=Marina.GetIndexOfBoatNodeByName(strNameOfBoatToDelete);
+                            if (index<1 )
+                            {
+                                throw new ArgumentOutOfRangeException("Could not find the requested boat " + strNameOfBoatToDelete + " in the marina");
+                            }
                             Marina.DeleteBoat(index);
+                            DisplayManager.displayMessage("The boat "+strNameOfBoatToDelete.ToUpper()+" has been removed from the marina");
                             List<string> data = new List<string>();
                             data = Marina.convertMarinaToList();
                             //write to  file
                             
-                            FP.writeToFile(true, data);
+                            FP.writeToFile( data);
                             DisplayManager.displayInvalidInputMessage("Press Any key to go back to main menu");
                             Console.ReadLine();
                             DisplayManager.clearScreen();
                             break;
                         case 3:
-                            Console.WriteLine("display all boats");
+                            Console.WriteLine("display all boats".ToUpper());
                             Marina.listAllBoats();
                             DisplayManager.displayInvalidInputMessage("Press any key to go back to main menu");
                             Console.ReadLine();

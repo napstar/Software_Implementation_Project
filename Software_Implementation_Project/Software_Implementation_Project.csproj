@@ -48,6 +48,7 @@
     <Compile Include="Factory\Boat.cs" />
     <Compile Include="Factory\BoatFactory.cs" />
     <Compile Include="Factory\BoatHelperClass.cs" />
+    <Compile Include="Factory\Class1.cs" />
     <Compile Include="Factory\IBoat.cs" />
     <Compile Include="Factory\MotorBoat.cs" />
     <Compile Include="Factory\NarrowBoat.cs" />
